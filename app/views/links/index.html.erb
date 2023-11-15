@@ -1,0 +1,9 @@
+<h1>URL Shortner</h1>
+<%= form_with model: Link.new do |form| %>
+  <div class="flex gap-2 items-center">
+    <%= form.url_field :url, required: true, placeholder: 'https://example.com', class: 'flex-grow rounded' %>
+    <%= form.button 'Save', class: 'px-3 py-2 rounded bg-gray-200 hover:bg-gray-400 hover:text-white' %>
+  </div>
+<% end %>
+
+<%= render @links %>
