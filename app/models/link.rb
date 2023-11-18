@@ -1,5 +1,6 @@
 class Link < ApplicationRecord
   validates :url, presence: true
+  has_many :views, dependent: :destroy
 
   scope :recent_first, -> { order(created_at: :desc) }
 
